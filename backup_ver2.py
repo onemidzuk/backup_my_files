@@ -11,11 +11,17 @@ now = time.strftime('%H%M%S')
 
 if not os.path.exists(today):
     os.mkdir(today)
-print("Catalogue succesfully created!")
+print('Catalogue succesfully created!')
 
 #target = target_dir + os.sep + time.strftime('%Y%m%d%H%M%S') + '.zip'
 
-target = today + os.sep + now + '.zip'
+comment = input('Input your comment:')
+
+if len(comment) == 0:
+    target = today + os.sep + now + '.zip'
+else:
+    target = today + os.sep + now + '_' + \
+             comment.replace(' ', '_') + '.zip'
 
 zip_command = "zip -qr {0} {1}".format(target, ' '.join(source))
 
