@@ -1,4 +1,4 @@
-import os
+# import os
 import time
 
 source = ['/home/midzuk/PycharmProjects/', '/home/midzuk/Документы']
@@ -23,6 +23,7 @@ else:
     target = today + os.sep + now + '_' + \
              comment.replace(' ', '_') + '.zip'
 
+tarfile.open(name=None, mode='r', fileobj=None, bufsize=10240, **kwargs)
 zip_command = "zip -qr {0} {1}".format(target, ' '.join(source))
 
 
