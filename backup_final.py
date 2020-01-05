@@ -23,7 +23,7 @@ else:
     target_arc = today_dir + os.sep + now_fname + '_' + \
              comment.replace(' ', '_') + '.zip'                 #  and replace spaces by underscores
 
-archive = zipfile.ZipFile(target_arc, 'a')                      # creating the zipfile
+archive = zipfile.ZipFile(target_arc, 'w')                      # creating the zipfile
 
 for source_dirs in source_dir:                                # iteration by source dirs
     for root, dirs, files in os.walk(source_dirs):            # walk by dirs and files with os.walk
